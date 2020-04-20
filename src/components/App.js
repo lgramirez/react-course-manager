@@ -17,7 +17,7 @@ export default function App() {
       <Switch>
         <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
-        <Route path="/courses" component={CoursesPage} />
+        <Route path="/courses" exact component={CoursesPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/" exact component={HomePage} />
         <Redirect from="/about-page" to="about" />

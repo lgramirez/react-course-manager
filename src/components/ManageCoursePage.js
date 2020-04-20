@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import CourseForm from "./CourseForm";
-import * as CourseAPI from "../api/courseApi";
+import CourseStore from "../stores/CourseStore";
 import { toast } from "react-toastify";
+import * as courseActions from "../actions/courseActions";
+import PageNotFound from "./PageNotFound";
 
 const ManageCoursePage = (props) => {
   const [errors, setErrors] = useState({});
+  const [courses, setCourses] = useState(CourseStore.getCourses());
   const [course, setCourse] = useState({
     id: null,
     slug: "",
@@ -14,11 +17,19 @@ const ManageCoursePage = (props) => {
   });
 
   useEffect(() => {
+    CourseStore.addChangeListener(onChange);
     const slug = props.match.params.slug; // from the path /courses/:slug
-    if (slug) {
-      CourseAPI.getCourseBySlug(slug).then((_course) => setCourse(_course));
+    if (courses.length === 0) {
+      courseActions.loadCourses();
+    } else if (slug) {
+      setCourse(CourseStore.getCourseBySlug(slug));
     }
-  }, [props.match.params.slug]);
+    return () => CourseStore.removeChangeListener(onChange);
+  }, [courses.length, props.match.params.slug]);
+
+  function onChange() {
+    setCourses(CourseStore.getCourses());
+  }
 
   function handleChange(event) {
     const updatedCourse = {
@@ -43,21 +54,25 @@ const ManageCoursePage = (props) => {
   function handleSubmit(event) {
     event.preventDefault();
     if (!formIsValid()) return;
-    CourseAPI.saveCourse(course).then(() => props.history.push("/courses"));
+    courseActions.saveCourse(course).then(() => props.history.push("/courses"));
     toast.success("Course Saved.");
   }
 
-  return (
-    <>
-      <h2>Manage Course</h2>
-      <CourseForm
-        errors={errors}
-        course={course}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      />
-    </>
-  );
+  if (course === undefined) return <PageNotFound />;
+  else if (course.id === null) return <div></div>;
+  else {
+    return (
+      <>
+        <h2>Manage Course</h2>
+        <CourseForm
+          errors={errors}
+          course={course}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
+      </>
+    );
+  }
 };
 
 export default ManageCoursePage;
