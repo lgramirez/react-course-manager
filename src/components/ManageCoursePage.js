@@ -59,7 +59,6 @@ const ManageCoursePage = (props) => {
   }
 
   if (course === undefined) return <PageNotFound />;
-  else if (course.id === null) return <div></div>;
   else {
     return (
       <>

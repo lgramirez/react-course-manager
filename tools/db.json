@@ -4,8 +4,9 @@
       "id": 1,
       "title": "Securing React Apps with Auth0",
       "slug": "react-auth0-authentication-security",
-      "authorId": 1,
-      "category": "JavaScript"
+      "authorId": 3,
+      "category": "JavaScript",
+      "authorName": "Cory House"
     },
     {
       "id": 2,
@@ -32,8 +33,9 @@
       "id": 5,
       "title": "Building Applications with React and Redux",
       "slug": "react-redux-react-router-es6",
-      "authorId": 1,
-      "category": "JavaScript"
+      "authorId": 2,
+      "category": "JavaScript",
+      "authorName": "Scott Allen"
     },
     {
       "id": 6,
@@ -46,8 +48,9 @@
       "id": 7,
       "title": "Clean Code: Writing Code for Humans",
       "slug": "writing-clean-code-humans",
-      "authorId": 1,
-      "category": "Software Practices"
+      "authorId": 2,
+      "category": "Software Practices",
+      "authorName": "Cory House"
     },
     {
       "id": 8,
@@ -60,31 +63,42 @@
       "id": 9,
       "title": "Becoming an Outlier: Reprogramming the Developer Mind",
       "slug": "career-reboot-for-developer-mind",
-      "authorId": 1,
-      "category": "Career"
+      "authorId": 2,
+      "category": "Career",
+      "authorName": "Cory House"
     },
     {
       "id": 10,
       "title": "Web Component Fundamentals",
       "slug": "web-components-shadow-dom",
-      "authorId": 1,
-      "category": "HTML5"
+      "authorId": 3,
+      "category": "HTML5",
+      "authorName": "Dan Wahlin"
     },
     {
       "id": 11,
-      "slug": "virtual-dom",
-      "title": "Virtual DOM",
-      "authorId": 1,
-      "category": "React",
-      "createdAt": 1587333978093
+      "slug": "asdasdas",
+      "title": "asdasdas",
+      "authorId": 3,
+      "category": "sasdsd",
+      "createdAt": 1587439755821,
+      "authorName": "Gonzalo Ramirez"
     },
     {
       "id": 12,
-      "slug": "props-a-new-approach",
-      "title": "Props a new approach",
+      "slug": "zxczxc",
+      "title": "zxczxc",
       "authorId": 1,
-      "category": "React",
-      "createdAt": 1587334067974
+      "category": "azxcds",
+      "createdAt": 1587439964863
+    },
+    {
+      "id": 13,
+      "slug": "hsdasq323",
+      "title": "hsdasq323",
+      "authorId": 6,
+      "category": "dsfweff",
+      "createdAt": 1587439995777
     }
   ],
   "authors": [
@@ -94,11 +108,26 @@
     },
     {
       "id": 2,
-      "name": "Scott Allen"
+      "name": "zxxzc"
     },
     {
       "id": 3,
-      "name": "Dan Wahlin"
+      "name": "Dan Wahlinzxzxc"
+    },
+    {
+      "id": 4,
+      "name": "Gonzalo Ramirez",
+      "createdAt": 1587439628003
+    },
+    {
+      "id": 5,
+      "name": "zxcxzcsad",
+      "createdAt": 1587439979777
+    },
+    {
+      "id": 6,
+      "name": "qweqweqweqwqwewe3343",
+      "createdAt": 1587439984757
     }
   ]
 }

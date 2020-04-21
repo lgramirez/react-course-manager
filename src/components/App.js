@@ -8,6 +8,8 @@ import ManageCoursePage from "./ManageCoursePage";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthorsPage from "./AuthorsPage";
+import ManageAuthorPage from "./ManageAuthorPage";
 
 export default function App() {
   return (
@@ -15,6 +17,9 @@ export default function App() {
       <ToastContainer autoClose={3000} hideProgressBar />
       <Header />
       <Switch>
+        <Route path="/author/:id" component={ManageAuthorPage} />
+        <Route path="/author" component={ManageAuthorPage} />
+        <Route path="/authors" exact component={AuthorsPage} />
         <Route path="/course/:slug" component={ManageCoursePage} />
         <Route path="/course" component={ManageCoursePage} />
         <Route path="/courses" exact component={CoursesPage} />
